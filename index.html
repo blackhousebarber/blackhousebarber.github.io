@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black House Barber</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: #eeeeee;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8, 8, 8, 0.96);
+  border-bottom: 1px solid #292929;
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+.logo small {
+  font-size: 11px;
+  color: #999999;
+  letter-spacing: 2px;
+}
+
+nav div:last-child {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.hero {
+  text-align: center;
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 20px;
+  background:
+    radial-gradient(circle at top, #292929 0%, #080808 55%);
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #444444;
+  border-radius: 30px;
+  padding: 9px 16px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #cccccc;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(45px, 9vw, 86px);
+  letter-spacing: 5px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 22px auto 30px;
+  color: #aaaaaa;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #555555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary {
+  background: #ffffff;
+  color: #080808;
+}
+
+.primary:hover {
+  background: #dddddd;
+  transform: translateY(-2px);
+}
+
+.secondary {
+  background: transparent;
+  color: #ffffff;
+}
+
+.secondary:hover {
+  background: #1b1b1b;
+}
+
+section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 85px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 38px;
+  margin: 0 0 10px;
+  letter-spacing: 2px;
+}
+
+.sub {
+  text-align: center;
+  color: #888888;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(145deg, #151515, #0e0e0e);
+  border: 1px solid #292929;
+  border-radius: 16px;
+  padding: 28px 22px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #555555;
+}
+
+.card h3 {
+  margin: 0 0 15px;
+  font-size: 17px;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.booking {
+  background: linear-gradient(145deg, #151515, #0e0e0e);
+  border: 1px solid #292929;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+label {
+  color: #bbbbbb;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px;
+  background: #080808;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #777777;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+form .btn {
+  width: 100%;
+  font-size: 15px;
+}
+
+.notice {
+  margin-top: 20px;
+  padding: 18px;
+  background: #101010;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  color: #999999;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #292929;
+  padding: 35px 20px;
+  color: #777777;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+
+  nav {
+    padding: 15px;
+  }
+
+  nav div:last-child {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .hero {
+    min-height: 75vh;
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: 3px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 65px 15px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .booking {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<header><nav><div class="logo">BLACK HOUSE<small>BARBER</small></div><div><a href="#servicos">Serviços</a><a href="#agendar">Agendar</a></div></nav></header>
+<main>
+<section class="hero">
+  <span class="badge">✂ ATENDIMENTO A DOMICÍLIO • CASCAVEL</span>
+
+  <h1>BLACK HOUSE</h1>
+
+  <p class="hero-subtitle">
+    Estilo que vai até você.
+  </p>
+
+  <p>
+    Corte masculino, barba e sobrancelha com atendimento
+    no conforto da sua casa.
+  </p>
+
+  <div class="hero-buttons">
+    <a class="btn primary" href="#agendar">AGENDAR HORÁRIO</a>
+    <a class="btn secondary" id="wa" href="#">WHATSAPP</a>
+  </div>
+
+  <div class="hero-info">
+    <div>
+      <strong>✂ CORTE</strong>
+      <span>A partir de R$ 50</span>
+    </div>
+
+    <div>
+      <strong>🧔 BARBA</strong>
+      <span>A partir de R$ 40</span>
+    </div>
+
+    <div>
+      <strong>🏠 DOMICÍLIO</strong>
+      <span>Todas as regiões</span>
+    </div>
+  </div>
+</section>
+
+<section id="servicos"><h2 class="title">Serviços</h2><p class="sub">Tabela oficial Black House Barber</p>
+<div class="grid">
+<div class="card"><h3>✂️ Corte masculino</h3><div class="price">R$ 50</div></div>
+<div class="card"><h3>🧔 Barba</h3><div class="price">R$ 40</div></div>
+<div class="card"><h3>👁️ Sobrancelha</h3><div class="price">R$ 15</div></div>
+<div class="card"><h3>✂️ Corte + Sobrancelha</h3><div class="price">R$ 60</div></div>
+<div class="card"><h3>🔥 Corte + Barba</h3><div class="price">R$ 85</div></div>
+<div class="card"><h3>🧔 Barba + Sobrancelha</h3><div class="price">R$ 50</div></div>
+<div class="card"><h3>🔥 Completo</h3><div class="price">R$ 95</div><small>Corte + Barba + Sobrancelha</small></div>
+</div></section>
+
+<section><h2 class="title">Seu estilo, no seu espaço.</h2><p class="sub">Praticidade sem abrir mão do acabamento.</p>
+<div class="grid"><div class="card"><h3>🏠 Atendimento a domicílio</h3><p>Horário previamente combinado e atendimento personalizado.</p></div>
+<div class="card"><h3>💳 Pagamento</h3><p>Pix, débito e crédito. Domingos com adicional de R$10.</p></div></div></section>
+
+<section id="agendar"><h2 class="title">Agende seu horário</h2><p class="sub">Preencha os dados abaixo e solicite seu horário. A confirmação será feita pelo WhatsApp. 🖤</p>
+<div class="booking"><form id="form">
+<label>Nome<input id="nome" required></label>
+<label>Telefone<input id="telefone" required></label>
+<label>Serviço<select id="servico" required><option value="">Selecione</option>
+<option>Corte masculino — R$50</option><option>Barba — R$40</option><option>Sobrancelha — R$15</option><option>Corte + Sobrancelha — R$60</option><option>Corte + Barba — R$85</option><option>Barba + Sobrancelha — R$50</option><option>Corte + Barba + Sobrancelha — R$95</option></select></label>
+<label>Data<input type="date" id="data" required></label>
+<label>Horário<select id="hora" required><option value="">Selecione</option><option>09:00</option><option>10:00</option><option>11:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:30</option><option>19:30</option><option>20:30</option></select></label>
+<label>Bairro/região<input id="bairro" required></label>
+<label class="full">Observação<textarea id="obs"></textarea></label>
+<div class="full"><button class="btn primary" type="submit">SOLICITAR AGENDAMENTO</button></div>
+</form><div class="notice">  🏠 <strong>ATENDIMENTO A DOMICÍLIO</strong><br><br>
+
+  A Black House atende em todas as regiões de Cascavel.<br><br>
+
+  📅 <strong>DOMINGOS:</strong> atendimento disponível com uma pequena taxa adicional.<br><br>
+
+  ⚠️ <strong>IMPORTANTE:</strong> o horário solicitado não é confirmado automaticamente.
+  Após o envio, entraremos em contato pelo WhatsApp para confirmar a disponibilidade.</div></div></section>
+</main>
+<footer>🖤 BLACK HOUSE BARBER • Estilo que vai até você<br>Cascavel - PR</footer>
+<script>
+const WHATSAPP="5545999802758";
+document.getElementById("wa").href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Olá! Vim pelo site da Black House Barber e quero agendar.");
+document.getElementById("data").min=new Date().toISOString().split("T")[0];
+document.getElementById("form").addEventListener("submit",e=>{e.preventDefault();
+let d=document.getElementById("data").value.split("-").reverse().join("/");
+let msg = `*BLACK HOUSE BARBER - AGENDAMENTO*\n\nNome: ${nome.value}\nTelefone: ${telefone.value}\nServiço: ${servico.value}\nData: ${d}\nHorário: ${hora.value}\nBairro: ${bairro.value}\nObservação: ${obs.value||"Nenhuma"}`;
+window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
+});
+</script></body></html>
